@@ -17,38 +17,33 @@
  * under the License.
  */
 var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
+  // Application Constructor
+  initialize: function() {
+    this.bindEvents();
+  }
 };
 
 app.initialize();
+
+function startDDP() {
+  var options = {
+    endpoint: "wss://localhost:3000",
+    SocketConstructor: WebSocket
+  };
+
+  var ddp = new DDP(options);
+
+  ddp.on("connected", function () {
+    console.log("Connected");
+
+    ddp.sub("Photos");
+    ddp.on("added", function (data) {
+        console.log(data.collection);
+    });
+  console.log(ddp);
+  return ddp;
+  });
+}
 
 function capturePhoto() {
     navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
