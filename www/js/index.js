@@ -1,8 +1,8 @@
 function onDeviceReady() {
   window.requestFileSystem(LocalFileSystem.PERSISTENT,
-                          0,
-                          onFileSystemSuccess,
-                          onFail
+                           0,
+                           onFileSystemSuccess,
+                           onFail
                           );
 }
 
@@ -11,7 +11,21 @@ function onFail(err) {
 }
 
 function onFileSystemSuccess(fileSystem) {
-  window.fs = fileSystem;
+  window.fileSystem = fileSystem;
+  createAlbumFolder();
+}
+
+function createAlbumFolder() {
+  var parent = fileSystem.root;
+  parent.getDirectory("instaGap",
+                      { create: true, exclusive: false },
+                      onFolderSuccess,
+                      onFail
+                     );
+}
+
+function onFolderSuccess(folder) {
+  window.instaGapFolder = folder;
 }
 
 function capturePhoto() {
@@ -28,11 +42,15 @@ function onPhotoTaken(data) {
 }
 
 function onPhotoFile(file) {
-  console.log(file);
+  file.moveTo(instaGapFolder, "", onMoveSuccess, onFail);
 }
 
-function addPhotoToGalery(data) {
-  cameraPic.src = data;
+function onMoveSuccess(file) {
+  addPhotoToGalery(file.nativeURL);
+}
+
+function addPhotoToGalery(photoPath) {
+  cameraPic.src = photoPath;
 }
 
 function getPhotoFile(url, onSuccess, onFail) {
