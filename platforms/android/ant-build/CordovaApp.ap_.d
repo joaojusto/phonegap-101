@@ -41,6 +41,7 @@
 /Users/joao/projectos/phonegap_intro/hello/platforms/android/assets/www/js/ddp.js \
 /Users/joao/projectos/phonegap_intro/hello/platforms/android/assets/www/js/ddp_helper.js \
 /Users/joao/projectos/phonegap_intro/hello/platforms/android/assets/www/js/index.js \
+/Users/joao/projectos/phonegap_intro/hello/platforms/android/assets/www/js/jquery-2.1.1.min.js \
 /Users/joao/projectos/phonegap_intro/hello/platforms/android/assets/www/plugins/org.apache.cordova.camera \
 /Users/joao/projectos/phonegap_intro/hello/platforms/android/assets/www/plugins/org.apache.cordova.file \
 /Users/joao/projectos/phonegap_intro/hello/platforms/android/assets/www/plugins/org.apache.cordova.camera/www \
