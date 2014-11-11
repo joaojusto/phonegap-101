@@ -78,7 +78,7 @@ Sie können tun, was Sie wollen, mit dem codierten Bildes oder URI, zum Beispiel
 
 Amazon Fire OS verwendet Absichten zum Starten von der Kamera-Aktivität auf dem Gerät, um Bilder zu erfassen und auf Handys mit wenig Speicher, Cordova Tätigkeit getötet werden kann. In diesem Szenario kann das Bild nicht angezeigt, wenn die Aktivität von Cordova wiederhergestellt wird.
 
-### Android Eigenarten
+### Android Macken
 
 Android verwendet Absichten zum Starten von der Kamera-Aktivität auf dem Gerät, um Bilder zu erfassen und auf Handys mit wenig Speicher, Cordova Tätigkeit getötet werden kann. In diesem Szenario kann das Bild nicht angezeigt, wenn die Aktivität von Cordova wiederhergestellt wird.
 
@@ -214,7 +214,7 @@ Optionale Parameter die Kameraeinstellungen anpassen.
 
 *   `Camera.PictureSourceType.PHOTOLIBRARY`und `Camera.PictureSourceType.SAVEDPHOTOALBUM` beide das gleiche Fotoalbum anzuzeigen.
 
-### Android Eigenarten
+### Android Macken
 
 *   `cameraDirection`Ergebnisse in einem hinten gerichteter Foto Wert.
 
@@ -266,7 +266,7 @@ Optionale Parameter die Kameraeinstellungen anpassen.
 
 *   gibt immer einen Datei-URI
 
-### Windows Phone 7 und 8 Eigenarten
+### Windows Phone 7 und 8 Macken
 
 *   Ignoriert die `allowEdit` Parameter.
 
